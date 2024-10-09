@@ -1,5 +1,6 @@
 package abner.projetos.whatsapp
 
+import abner.projetos.whatsapp.adapters.ViewPagerAdapter
 import abner.projetos.whatsapp.databinding.ActivityMainBinding
 import abner.projetos.whatsapp.utils.exibirMensagem
 import android.content.Intent
@@ -10,6 +11,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
+import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -33,6 +35,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         inicializarToolbar()
+        inicializarNavegacaoAbas()
+
+    }
+
+    private fun inicializarNavegacaoAbas() {
+        val tabLayout = binding.tabLayoutPrincipal
+        val viewPager = binding.viewPagerPrincipal
+
+        val abas = listOf("CONVERSAS", "CONTATOS")
+        viewPager.adapter = ViewPagerAdapter(
+            abas,
+            supportFragmentManager,
+            lifecycle
+        )
+
+
+        tabLayout.isTabIndicatorFullWidth = true
+        TabLayoutMediator(tabLayout, viewPager) { aba, posicao ->
+            aba.text = abas[posicao]
+        }.attach()
 
     }
 
