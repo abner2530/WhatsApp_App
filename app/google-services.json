@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "569919203295",
+    "project_id": "aulawhatsapp-321ae",
+    "storage_bucket": "aulawhatsapp-321ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569919203295:android:116ba16bfa580569fe466a",
+        "android_client_info": {
+          "package_name": "abner.projetos.whatsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcB5_cVLAjdzj3IPogoR0f19v5wRcWNGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
