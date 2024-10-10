@@ -1,4 +1,4 @@
-package abner.projetos.whatsapp
+package abner.projetos.whatsapp.activities
 
 import abner.projetos.whatsapp.databinding.ActivityPerfilBinding
 import abner.projetos.whatsapp.utils.exibirMensagem

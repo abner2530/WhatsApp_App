@@ -1,5 +1,6 @@
 package abner.projetos.whatsapp.fragments
 
+import abner.projetos.whatsapp.activities.MensagemActivity
 import abner.projetos.whatsapp.adapters.ContatosAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import abner.projetos.whatsapp.databinding.FragmentContatosBinding
 import abner.projetos.whatsapp.model.Usuario
+import abner.projetos.whatsapp.utils.Constantes
+import android.content.Intent
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
@@ -36,7 +39,12 @@ class ContatosFragment : Fragment() {
     ): View {
         binding = FragmentContatosBinding.inflate(inflater, container, false)
 
-        contatosAdapter = ContatosAdapter()
+        contatosAdapter = ContatosAdapter { usuario ->
+            val intent = Intent(context, MensagemActivity::class.java)
+            intent.putExtra("dadosDestinatario", usuario)
+            intent.putExtra("origem", Constantes.ORIGEM_CONTATO)
+            startActivity(intent)
+        }
         binding.rvContatos.adapter = contatosAdapter
         binding.rvContatos.layoutManager = LinearLayoutManager(context)
         binding.rvContatos.addItemDecoration(
@@ -72,7 +80,7 @@ class ContatosFragment : Fragment() {
                         }
                     }
                 }
-                if ( listaContatos.isNotEmpty()) {
+                if (listaContatos.isNotEmpty()) {
                     contatosAdapter.adicionarLista(listaContatos)
                 }
             }

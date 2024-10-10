@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.squareup.picasso.Picasso
 
-class ContatosAdapter : RecyclerView.Adapter<ContatosAdapter.ContatosViewHolder>() {
+class ContatosAdapter(
+    private val onClick: (Usuario) -> Unit
+) : RecyclerView.Adapter<ContatosAdapter.ContatosViewHolder>() {
 
     private var listaContatos = emptyList<Usuario>()
 
@@ -27,6 +29,10 @@ class ContatosAdapter : RecyclerView.Adapter<ContatosAdapter.ContatosViewHolder>
             Picasso.get()
                 .load(usuario.foto)
                 .into(binding.imageContatoFoto)
+
+            binding.clItemContato.setOnClickListener {
+                onClick(usuario)
+            }
         }
     }
 

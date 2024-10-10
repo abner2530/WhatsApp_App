@@ -14,7 +14,7 @@
 
 
     <style name="Circulo" >
-        <item name="cornerSize">25%</item>
+        <item name="cornerSize">50%</item>
     </style>
 
 

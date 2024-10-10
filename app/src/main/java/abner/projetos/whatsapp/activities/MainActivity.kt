@@ -1,5 +1,6 @@
-package abner.projetos.whatsapp
+package abner.projetos.whatsapp.activities
 
+import abner.projetos.whatsapp.R
 import abner.projetos.whatsapp.adapters.ViewPagerAdapter
 import abner.projetos.whatsapp.databinding.ActivityMainBinding
 import android.content.Intent
