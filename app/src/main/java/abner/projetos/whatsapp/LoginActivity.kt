@@ -4,7 +4,6 @@ import abner.projetos.whatsapp.databinding.ActivityLoginBinding
 import abner.projetos.whatsapp.utils.exibirMensagem
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException

@@ -48,6 +48,8 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx") // Firebase Firestore
     implementation("com.google.firebase:firebase-storage-ktx") // Firebase Cloud Storage
 
+    implementation ("com.squareup.picasso:picasso:2.8") // Picasso
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

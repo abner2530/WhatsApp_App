@@ -2,7 +2,6 @@ package abner.projetos.whatsapp
 
 import abner.projetos.whatsapp.adapters.ViewPagerAdapter
 import abner.projetos.whatsapp.databinding.ActivityMainBinding
-import abner.projetos.whatsapp.utils.exibirMensagem
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
