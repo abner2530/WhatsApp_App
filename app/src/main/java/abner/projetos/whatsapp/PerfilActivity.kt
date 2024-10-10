@@ -106,6 +106,13 @@ class PerfilActivity : AppCompatActivity() {
                         ?.addOnSuccessListener { url ->
                             val dados = mapOf("foto" to url.toString())
                             atualizarDadosPerfil(idUsuario, dados)
+
+                            // Limpar cache e forçar o carregamento da nova imagem // OPCIONAL
+                            Picasso.get()
+                                .invalidate(url)
+                            Picasso.get()
+                                .load(url)
+                                .into(binding.imagePerfil)
                         }
 
                 }.addOnFailureListener {
